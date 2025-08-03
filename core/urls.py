@@ -22,6 +22,7 @@ from drf_yasg import openapi
 from rest_framework import permissions
 from todo.urls import urlpatterns as todo_urls
 from code_advices import urls as code_advices_urls
+from user import urls as user_urls
 from . import logs
 
 schema_view = get_schema_view(
@@ -56,7 +57,8 @@ urlpatterns = [
                 #
                 # v1 urls
                 path("todo/", include(todo_urls)),
-                path("code-advices/", include(code_advices_urls)),
+                path("code_advices/", include(code_advices_urls)),
+                path("user/", include(user_urls)),
             ]
         ),
     ),
